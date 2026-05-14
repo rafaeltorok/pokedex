@@ -25,11 +25,17 @@ const App = () => {
 
   let next = null
   let previous = null
+  const minEntryNumber = 1
+  const maxEntryNumber = 151
 
   if (match && match.params) {
     const pokemonId = pokemonList.find(({ name }) => name === match.params.name).id
-    previous = pokemonList.find(({ id }) => id === pokemonId - 1)
-    next = pokemonList.find(({ id }) => id === pokemonId + 1)
+    previous = (pokemonId > minEntryNumber) ?
+      pokemonList.find(({ id }) => id === pokemonId - 1) :
+      null
+    next = (pokemonId < maxEntryNumber) ?
+      pokemonList.find(({ id }) => id === pokemonId + 1) :
+      null
   }
 
   return (
