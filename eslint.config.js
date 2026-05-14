@@ -52,7 +52,7 @@ module.exports = [
       globals: {
         ...globals.browser,
         ...globals.es6,
-        ...globals.jest
+        ...globals.jest,
       }
     },
     settings: {
@@ -73,5 +73,15 @@ module.exports = [
       'no-console': 'error',
       'react/prop-types': 0
     }
+  },
+  {
+    files: ['jest.setup.js'],
+    languageOptions: {
+      ecmaVersion: 2018,
+      sourceType: 'commonjs',
+      globals: {
+        ...globals.node
+      }
+    },
   }
 ]
