@@ -1,0 +1,60 @@
+{
+  "name": "fullstackopen-cicd",
+  "version": "1.0.0",
+  "description": "Full Stack Open",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development --port 8080",
+    "start-prod": "node app.js",
+    "test": "jest",
+    "eslint": "eslint './**/*.{js,jsx}'",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartlyio/fullstackopen-cicd.git"
+  },
+  "keywords": [
+    "fullstack-open"
+  ],
+  "author": "Smartly.io",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smartlyio/fullstackopen-cicd/issues"
+  },
+  "homepage": "https://github.com/smartlyio/fullstackopen-cicd#readme",
+  "dependencies": {
+    "axios": "^1.13.6",
+    "express": "^5.2.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^7.13.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFiles": ["<rootDir>/jest.setup.js"]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/plugin-transform-runtime": "^7.29.0",
+    "@babel/preset-env": "^7.29.0",
+    "@babel/preset-react": "^7.28.5",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "babel-jest": "^30.3.0",
+    "babel-loader": "^10.1.1",
+    "css-loader": "^7.1.4",
+    "eslint": "^9.39.4",
+    "eslint-plugin-jest": "^29.15.0",
+    "eslint-plugin-react": "^7.37.5",
+    "history": "^5.3.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.6",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.3"
+  }
+}
