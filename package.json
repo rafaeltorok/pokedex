@@ -39,7 +39,7 @@
       "<rootDir>/jest.setup.js"
     ],
     "testPathIgnorePatterns": [
-      "e2e-tests"
+      "e2e"
     ]
   },
   "devDependencies": {
