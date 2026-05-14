@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route, useMatch } from 'react-router-dom'
+import { Routes, Route, useMatch } from 'react-router-dom'
 import { useApi } from './useApi'
 import LoadingSpinner from './LoadingSpinner'
 import ErrorMessage from './ErrorMessage'
@@ -14,7 +14,7 @@ const mapResults = (({ results }) => results.map(({ url, name }) => ({
 
 const App = () => {
   const match = useMatch('/pokemon/:name')
-  const { data: pokemonList, error, isLoading } = useApi('https://pokeapi.co/api/v2/pokemon/?limit=50', mapResults)
+  const { data: pokemonList, error, isLoading } = useApi('https://pokeapi.co/api/v2/pokemon/?limit=151', mapResults)
 
   if (isLoading) {
     return <LoadingSpinner />
@@ -33,12 +33,15 @@ const App = () => {
   }
 
   return (
-    <Routes>
-      <Route exact path="/" element={<PokemonList pokemonList={pokemonList} />} />
-      <Route exact path="/pokemon/:name" element={
-        <PokemonPage pokemonList={pokemonList} previous={previous} next={next} />
-      } />
-    </Routes>
+    <>
+      <h1 id='main-page-title'>Kanto Pokédex</h1>
+      <Routes>
+        <Route exact path="/" element={<PokemonList pokemonList={pokemonList} />} />
+        <Route exact path="/pokemon/:name" element={
+          <PokemonPage pokemonList={pokemonList} previous={previous} next={next} />
+        } />
+      </Routes>
+    </>
   )
 }
 

@@ -1,15 +1,32 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700");
 
-html, body {
+@font-face {
+  font-family: "PokeFontSolid";
+  src: url("/public/fonts/pokemon-solid.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PokeFontHollow";
+  src: url("/public/fonts/pokemon-hollow.ttf") format("truetype");
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  body {
+    min-width: 400px;
+  }
+}
+
+html,
+body {
   height: 100%;
-  margin: 0;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
+  align-items: center;
+  background-color: #151515;
 }
 
 body > div {
@@ -39,44 +56,67 @@ footer {
 .list-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .list-item {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #eee;
+  background-color: #252525;
   margin: 10px;
   height: 150px;
   width: 150px;
   position: relative;
+  border-radius: 1rem;
 }
 
 .list-item-name {
   position: absolute;
-  color: #000;
+  color: yellow;
+  -webkit-text-stroke: 0.75px black;
   bottom: 0;
   width: 100%;
   text-align: center;
   text-transform: capitalize;
-  background-color: #eee;
+  background-color: black;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .links {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
   margin-bottom: 10px;
   text-decoration: none;
   width: 332px;
 }
 
+.links a {
+  color: yellow;
+  -webkit-text-stroke: 0.5px black;
+  text-decoration: none;
+}
+
+#main-page-title {
+  font-family: "PokeFontHollow", "Open Sans", sans-serif;
+  color: yellow;
+  font-size: 3rem;
+  text-align: center;
+}
+
 .pokemon-page {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
   background: linear-gradient(140deg, var(--pokemon-type-color) 0%, #ddd 100%);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  height: 470px;
   padding: 16px;
-  width: 300px;
+  min-width: 300px;
+  max-width: 350px;
+  margin: 1rem auto;
 }
 
 .pokemon-image {
@@ -89,25 +129,25 @@ footer {
 }
 
 .pokemon-name {
-  font-family: "Open Sans Condensed", "Open Sans";
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 1.7rem;
   text-align: center;
   text-transform: capitalize;
 }
 
 .pokemon-info {
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: rgba(0, 0, 0, 0.65);
+  color: yellow;
+  -webkit-text-stroke: 0.25px black;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   height: 100%;
-  padding: 16px;
+  padding: 1rem;
 }
 
 .pokemon-stats {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
   flex: 1;
-  font-family: "Open Sans Condensed", "Open Sans";
   padding-top: 15px;
   text-transform: capitalize;
 }
@@ -120,7 +160,7 @@ footer {
   font-weight: 300;
   padding: 4px 8px 0 8px;
   text-align: right;
-  width: 50%;
+  width: 60%;
 }
 
 .pokemon-stats-value {
