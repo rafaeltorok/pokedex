@@ -10,7 +10,9 @@ module.exports = [
       'eslint.config.js',
       '.eslintrc.js',
       'node_modules/**',
-      'dist/**'
+      'dist/**',
+      'test-results/**',
+      'playwright-report/**'
     ]
   },
   js.configs.recommended,
@@ -53,6 +55,7 @@ module.exports = [
         ...globals.browser,
         ...globals.es6,
         ...globals.jest,
+        ...globals.node
       }
     },
     settings: {
@@ -83,5 +86,13 @@ module.exports = [
         ...globals.node
       }
     },
+  },
+  {
+    files: ['playwright.config.js'],
+    languageOptions: {
+      globals: {
+        ...globals.node
+      }
+    }
   }
 ]
