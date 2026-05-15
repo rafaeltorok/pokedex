@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --open --mode development --port 8080",
     "start-prod": "node app.js",
+    "start-test": "NODE_ENV=test node app.js",
     "test": "jest",
     "eslint": "eslint './**/*.{js,jsx}'",
     "build": "webpack --mode production",
