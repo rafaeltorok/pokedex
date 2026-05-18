@@ -4,12 +4,12 @@ import { test, describe, expect, beforeEach } from "@playwright/test"
 // Tests
 describe("Main page", () => {
   beforeEach(async ({ page }) => {
-    await page.goto("http://localhost:8080")
+    await page.goto("/")
   })
 
   describe("The main page", () => {
     test("front page can be opened", async ({ page }) => {
-      // Confirm the basic rendered text is visible
+      // Confirm there are elements present on the page
       await expect(page.getByText(/kanto pokédex/i)).toBeVisible()
       await expect(page.getByText("ivysaur")).toBeVisible()
       await expect(page.getByText("Pokémon and Pokémon character names are trademarks of Nintendo.")).toBeVisible()
@@ -23,6 +23,10 @@ describe("Main page", () => {
       // Confirm the Pokémon info is present
       await expect(page.getByText(/overgrow/i)).toBeVisible()
       await expect(page.getByText(/chlorophyll/i)).toBeVisible()
+    })
+
+    test("the search bar should be displayed", async ({ page }) => {
+      await expect(page.getByRole('searchbox', { name: /search pokémon.../i })).toBeVisible()
     })
   })
 })
