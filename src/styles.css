@@ -118,7 +118,8 @@ footer {
   width: 300px;
   padding: 0.5rem;
   font-size: large;
-  -webkit-text-stroke: 0.5px black;
+  background-color: black;
+  color: yellow;
 }
 
 .not-found-message {
