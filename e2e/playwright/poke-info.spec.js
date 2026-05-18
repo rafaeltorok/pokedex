@@ -5,14 +5,11 @@ import { test, describe, expect } from "@playwright/test"
 import assertStatsRowValue from "./helpers/assertStatsRowValue"
 import assertHiddenAbilities from "./helpers/assertHiddenAbilities"
 
-// Constants
-const baseUrl = "http://localhost:8080"
-
 // Tests
 describe("Pokémon info page", () => {
   test("the previous button should not be visible on the first pokédex entry", async ({ page }) => {
     // Choose the Pokémon with ID #1
-    await page.goto(`${baseUrl}/pokemon/bulbasaur`)
+    await page.goto("/pokemon/bulbasaur")
 
     // Assert the correct page has been displayed
     await expect(page.getByText(/bulbasaur/i)).toBeVisible()
@@ -25,7 +22,7 @@ describe("Pokémon info page", () => {
 
   test("the next button should not be visible on the last pokédex entry", async ({ page }) => {
     // Select the last Pokédex entry
-    await page.goto(`${baseUrl}/pokemon/mew`)
+    await page.goto("/pokemon/mew")
 
     // Assert the correct page has been displayed
     await expect(page.getByText(/^mew$/i)).toBeVisible()
@@ -38,7 +35,7 @@ describe("Pokémon info page", () => {
 
   test("the home button sends back to the main page", async ({ page }) => {
     // Select a pokémon
-    await page.goto(`${baseUrl}/pokemon/mewtwo`)
+    await page.goto("/pokemon/mewtwo")
 
     // Confirm the pokémon info page has opened
     await expect(page.getByText(/mewtwo/i)).toBeVisible()
@@ -54,7 +51,7 @@ describe("Pokémon info page", () => {
 
   test("all stats are present on the pokémon info card", async ({ page }) => {
     // Select a pokémon
-    await page.goto(`${baseUrl}/pokemon/mewtwo`)
+    await page.goto("/pokemon/mewtwo")
 
     // Confirm the pokémon info page has opened
     await expect(page.getByText(/mewtwo/i)).toBeVisible()
@@ -70,7 +67,7 @@ describe("Pokémon info page", () => {
 
   test("two abilities should be correctly displayed", async ({ page }) => {
     // Select a pokémon
-    await page.goto(`${baseUrl}/pokemon/mewtwo`)
+    await page.goto("/pokemon/mewtwo")
 
     // Confirm the pokémon info page has opened
     await expect(page.getByText(/mewtwo/i)).toBeVisible()
@@ -81,7 +78,7 @@ describe("Pokémon info page", () => {
 
   test("a single ability should be correctly displayed", async ({ page }) => {
     // Select a pokémon
-    await page.goto(`${baseUrl}/pokemon/mew`)
+    await page.goto("/pokemon/mew")
 
     // Confirm the pokémon info page has opened
     await expect(page.getByText(/^mew$/i)).toBeVisible()
