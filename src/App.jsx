@@ -1,10 +1,14 @@
-import React from 'react'
+// Dependencies
+import React, { useState } from 'react'
 import { Routes, Route, useMatch } from 'react-router-dom'
 import { useApi } from './useApi'
-import LoadingSpinner from './LoadingSpinner'
-import ErrorMessage from './ErrorMessage'
-import PokemonPage from './PokemonPage'
-import PokemonList from './PokemonList'
+
+// Components
+import LoadingSpinner from './components/LoadingSpinner'
+import ErrorMessage from './components/ErrorMessage'
+import PokemonPage from './components/PokemonPage'
+import PokemonList from './components/PokemonList'
+import SearchBar from './components/SearchBar'
 
 const mapResults = (({ results }) => results.map(({ url, name }) => ({
   url,
@@ -15,6 +19,7 @@ const mapResults = (({ results }) => results.map(({ url, name }) => ({
 const App = () => {
   const match = useMatch('/pokemon/:name')
   const { data: pokemonList, error, isLoading } = useApi('https://pokeapi.co/api/v2/pokemon/?limit=151', mapResults)
+  const [searchTerm, setSearchTerm] = useState('')
 
   if (isLoading) {
     return <LoadingSpinner />
@@ -23,18 +28,22 @@ const App = () => {
     return <ErrorMessage error={error} />
   }
 
+  // Filter the list based on the search term
+  const filteredPokemon = pokemonList.filter((pokemon) => {
+    return pokemon.name.includes(searchTerm.toLowerCase())
+  })
+
   let next = null
   let previous = null
-  const minEntryNumber = 1
-  const maxEntryNumber = 151
 
+  // Handle the logic for the previous and next links
   if (match && match.params) {
-    const pokemonId = pokemonList.find(({ name }) => name === match.params.name).id
-    previous = (pokemonId > minEntryNumber) ?
-      pokemonList.find(({ id }) => id === pokemonId - 1) :
+    const pokemonIndex = filteredPokemon.findIndex(({ name }) => name === match.params.name)
+    previous = (pokemonIndex > 0) ?
+      filteredPokemon[pokemonIndex - 1] :
       null
-    next = (pokemonId < maxEntryNumber) ?
-      pokemonList.find(({ id }) => id === pokemonId + 1) :
+    next = (pokemonIndex < filteredPokemon.length) ?
+      filteredPokemon[pokemonIndex + 1] :
       null
   }
 
@@ -42,9 +51,14 @@ const App = () => {
     <>
       <h1 id='main-page-title'>Kanto Pokédex</h1>
       <Routes>
-        <Route exact path="/" element={<PokemonList pokemonList={pokemonList} />} />
+        <Route exact path="/" element={
+          <>
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            <PokemonList pokemonList={filteredPokemon} />
+          </>
+        } />
         <Route exact path="/pokemon/:name" element={
-          <PokemonPage pokemonList={pokemonList} previous={previous} next={next} />
+          <PokemonPage pokemonList={filteredPokemon} previous={previous} next={next} />
         } />
       </Routes>
     </>
