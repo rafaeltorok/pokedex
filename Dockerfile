@@ -9,11 +9,17 @@ RUN npm ci
 RUN npm run build
 
 # Production stage
-FROM nginx:stable-alpine AS production
+FROM node:20-alpine AS production
 
-# Copy the Nginx conf
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+WORKDIR /usr/src/app
 
-COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+COPY ./package*.json .
+COPY ./app.js .
+COPY --from=build /app/dist /usr/src/app/dist
+
+RUN npm install --omit=dev
+
+EXPOSE 5001
+ENV PORT=5001
+
+CMD ["node", "./app.js"]
