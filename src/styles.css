@@ -121,6 +121,15 @@ footer {
   -webkit-text-stroke: 0.5px black;
 }
 
+.not-found-message {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  color: yellow;
+  -webkit-text-stroke: 0.75px black;
+  font-size: 2rem;
+  margin: 3rem;
+  text-align: center;
+}
+
 .pokemon-page {
   font-family: "PokeFontSolid", "Open Sans", sans-serif;
   background: linear-gradient(140deg, var(--pokemon-type-color) 0%, #ddd 100%);

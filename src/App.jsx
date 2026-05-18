@@ -54,7 +54,11 @@ const App = () => {
         <Route exact path="/" element={
           <>
             <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            <PokemonList pokemonList={filteredPokemon} />
+            {
+              (filteredPokemon.length === 0) ?
+                <p className='not-found-message'>No Pokémon found</p> :
+                <PokemonList pokemonList={filteredPokemon} />
+            }
           </>
         } />
         <Route exact path="/pokemon/:name" element={
