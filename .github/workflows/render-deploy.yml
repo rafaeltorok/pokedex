@@ -3,6 +3,8 @@ name: Deploy app to Render
 on:
   push:
     branches: [ main ]
+  pull_request:
+    types: [ opened, synchronize ]
 
 jobs:
   build-and-push:
@@ -34,4 +36,3 @@ jobs:
     steps:
       - name: Deploy to Render
         run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
-

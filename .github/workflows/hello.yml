@@ -2,8 +2,7 @@ name: Hello World!
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main, testing ]
 
 jobs:
   hello_world_job:
