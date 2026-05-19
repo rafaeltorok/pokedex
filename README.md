@@ -2,7 +2,10 @@
 
 ## Table of Contents
 - [About](#about)
-- [Commands](#commands)
+- [Starting the app](#starting-the-app)
+- [Component tests](#component-tests)
+- [E2E tests](#e2e-tests)
+- [ESLint](#eslint)
 - [Docker](#docker)
 - [Access](#access)
 
@@ -14,39 +17,45 @@ This repository is used for the CI/CD module of the Full Stack Open course.
 Live test available on [Render⇗](https://kantopokedex.onrender.com)
 
 
-## Commands
+## Starting the app
 
-- Install dependencies
+### Dev mode
+
+Run the webpack dev server
+```bash
+npm install && npm run start
+```
+
+- Access the Web UI on http://localhost:8080
+
+### Production mode
+
+Build the project
+```bash
+npm install && npm run build
+```
+
+Start the production build
+```bash
+npm run start-prod
+```
+
+- Access the Web UI on http://localhost:5001
+
+- Express server health check
   ```bash
-  npm install
+  curl http://localhost:5001/health
   ```
 
-- Run the webpack dev server
-  ```bash
-  npm run start
-  ```
 
-- Build the project
-  ```bash
-  npm run build
-  ```
+## Component tests
 
-- Start the production build
-  ```bash
-  npm run start-prod
-  ```
+```bash
+npm run test
+```
 
-- Run Jest tests
-  ```bash
-  npm run test
-  ```
 
-- Run ESLint
-  ```bash
-  npm run eslint
-  ```
-
-### E2E tests
+## E2E tests
 
 - CLI mode
   ```bash
@@ -58,24 +67,32 @@ Live test available on [Render⇗](https://kantopokedex.onrender.com)
   npm run e2e:ui
   ```
 
-- Playwright report mode
+- Playwright report
   ```bash
   npm run e2e:report
   ```
 
 
+## ESLint
+
+Run ESLint
+```bash
+npm run eslint
+```
+
+
 ## Docker
-Build the image
-```bash
-docker build -t kanto-pokedex .
-```
 
-Run the container
-```bash
-docker run --name kanto-pokedex -p 8080:80 kanto-pokedex
-```
+1. Build the image
+    ```bash
+    docker build -t kanto-pokedex .
+    ```
 
+2. Run the container
+    ```bash
+    docker run --name kanto-pokedex -p 5001:5001 kanto-pokedex
+    ```
 
-## Access
+- Access the Web UI on http://localhost:5001
 
-Access the Web UI on http://localhost:8080
+- Health checks on http://localhost:5001/health
