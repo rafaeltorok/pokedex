@@ -8,6 +8,7 @@ on:
 
 jobs:
   build-and-push:
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -31,6 +32,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/pokedex:latest
 
   deploy-to-render:
+    if: ${{ github.event_name == 'push' }}
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
