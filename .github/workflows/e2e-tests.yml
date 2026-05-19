@@ -1,18 +1,20 @@
-name: Playwright Tests
+name: E2E tests
+
 on:
   push:
     branches: [ main, testing ]
   pull_request:
     branches: [ main ]
+
 jobs:
-  test:
+  e2e-tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: '24'
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
