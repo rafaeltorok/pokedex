@@ -14,7 +14,16 @@
 
 This repository is used for the CI/CD module of the Full Stack Open course.
 
-Live test available on [Render⇗](https://kantopokedex.onrender.com)
+- [Live test⇗](https://kantopokedex.onrender.com) available on Render.
+
+- Docker image available on Hub
+  ```bash
+  docker pull rafaeltorok/pokedex:latest
+  ```
+
+### Screenshots
+
+<img src="./img/main-page.png" alt="Kanto Pokédex app main page" width="500"/><img src="./img/poke-info-page.png" alt="Pokémon info page" width="250"/>
 
 
 ## Starting the app
