@@ -1,7 +1,7 @@
 {
-  "name": "fullstackopen-cicd",
+  "name": "pokedex-app",
   "version": "1.0.0",
-  "description": "Full Stack Open",
+  "description": "Pokédex App",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development --port 8080",
@@ -16,17 +16,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smartlyio/fullstackopen-cicd.git"
+    "url": "git+https://github.com/rafaeltorok/pokedex.git"
   },
   "keywords": [
     "fullstack-open"
   ],
-  "author": "Smartly.io",
+  "author": "Rafael G. Torok",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/smartlyio/fullstackopen-cicd/issues"
+    "url": "https://github.com/rafaeltorok/pokedex/issues"
   },
-  "homepage": "https://github.com/smartlyio/fullstackopen-cicd#readme",
+  "homepage": "https://github.com/rafaeltorok/pokedex#readme",
   "dependencies": {
     "axios": "^1.13.6",
     "express": "^5.2.1",
