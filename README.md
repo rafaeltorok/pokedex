@@ -12,7 +12,7 @@
 
 ## About
 
-This repository is used for the CI/CD module of the Full Stack Open course.
+Project part of the CI/CD module for the Full Stack Open course by MOOC Finland.
 
 - [Live test⇗](https://kantopokedex.onrender.com) available on Render.
 
@@ -21,9 +21,27 @@ This repository is used for the CI/CD module of the Full Stack Open course.
   docker pull rafaeltorok/pokedex:latest
   ```
 
+### Features
+
+- The app displays a list of all Pokémons from the first four generations (Kanto, Johto, Hoenn and Sinnoh).
+
+- Search by any Pokémon on the list.
+
+- Use the generation selector to choose which of these generations you want to display the list for.
+
+- The individual information page displays all base stats, plus the main ability and hidden ability for each Pokémon.
+
 ### Screenshots
 
-<img src="./img/main-page.png" alt="Kanto Pokédex app main page" width="500"/><img src="./img/poke-info-page.png" alt="Pokémon info page" width="250"/>
+<div
+  style="
+    display: flex;
+    gap: 2rem;
+  "
+>
+  <img src="./img/main-page.png" alt="Pokédex app main page" width="450"/>
+  <img src="./img/poke-info-page.png" alt="Pokémon info page" width="300"/>
+</div>
 
 
 ## Starting the app
