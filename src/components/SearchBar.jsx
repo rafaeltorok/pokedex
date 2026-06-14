@@ -1,5 +1,10 @@
+// Dependencies
 import React from "react";
 
+// Styles
+import "../styles/searchBar.css";
+
+// Component
 export default function SearchBar({ searchTerm, setSearchTerm }) {
   return (
     <div className="search-container">

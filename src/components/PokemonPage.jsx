@@ -8,8 +8,13 @@ import LoadingSpinner from "./LoadingSpinner";
 import PokemonAbility from "./PokemonAbility";
 import ErrorMessage from "./ErrorMessage";
 
+// Styles
+import "../styles/pokemonPage.css";
+import "../styles/pokemonTypes.css";
+
 const formatName = (nameWithDash) => nameWithDash.replace("-", " ");
 
+// Component
 const PokemonPage = ({ previous, next }) => {
   const { name } = useParams();
   const {

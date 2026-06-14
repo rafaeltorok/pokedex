@@ -11,6 +11,9 @@ import PokemonPage from "./components/PokemonPage";
 import PokemonList from "./components/PokemonList";
 import SearchBar from "./components/SearchBar";
 
+// Styles
+import "./styles/styles.css";
+
 // Data
 import pokedexGenList from "./data/pokedexGenList";
 

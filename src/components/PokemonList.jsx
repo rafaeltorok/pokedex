@@ -1,6 +1,11 @@
+// Dependencies
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Styles
+import "../styles/pokemonList.css";
+
+// Component
 const PokemonList = ({ pokemonList }) => {
   return (
     <div className="list-container">

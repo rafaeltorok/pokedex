@@ -1,0 +1,61 @@
+@import url("./fonts.css");
+
+.pokemon-page {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  background: linear-gradient(140deg, var(--pokemon-type-color) 0%, #ddd 100%);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  min-width: 300px;
+  max-width: 350px;
+  margin: 1rem auto;
+}
+
+.pokemon-image {
+  min-height: 150px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.pokemon-name {
+  font-size: 1.7rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.pokemon-info {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: yellow;
+  -webkit-text-stroke: 0.25px black;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  padding: 1rem;
+}
+
+.pokemon-stats {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  flex: 1;
+  padding-top: 15px;
+  text-transform: capitalize;
+}
+
+.pokemon-stats table {
+  width: 100%;
+}
+
+.pokemon-stats-name {
+  font-weight: 300;
+  padding: 4px 8px 0 8px;
+  text-align: right;
+  width: 60%;
+}
+
+.pokemon-stats-value {
+  padding: 4px 8px 0 8px;
+}

@@ -1,0 +1,15 @@
+@import url("./fonts.css");
+
+.gen-selector-area {
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+}
+
+.gen-selector-area select {
+  background-color: black;
+  color: yellow;
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  font-size: large;
+  padding: 0.25rem;
+}

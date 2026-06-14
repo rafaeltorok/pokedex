@@ -1,6 +1,11 @@
+// Dependencies
 import React from "react";
 import pokedexGenList from "../data/pokedexGenList";
 
+// Styles
+import "../styles/genSelector.css";
+
+// Component
 export default function GenSelector({ pokeRegion, setPokeRegion }) {
   return (
     <div className="gen-selector-area">

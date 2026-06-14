@@ -1,0 +1,14 @@
+.pokemon-abilities {
+  display: flex;
+  margin-top: 20px;
+  text-transform: capitalize;
+}
+
+.pokemon-ability {
+  flex: 1;
+}
+
+.pokemon-ability-type {
+  font-size: 10px;
+  text-transform: uppercase;
+}

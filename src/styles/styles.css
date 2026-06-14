@@ -1,0 +1,68 @@
+@import url("./fonts.css");
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  body {
+    min-width: 400px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  align-items: center;
+  background-color: #151515;
+}
+
+body > div {
+  flex: 1 0 auto;
+}
+
+footer {
+  color: #888;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.loading-spinner {
+  animation: rotation 2s infinite linear;
+  margin: 120px;
+  width: 80px;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+#main-page-title {
+  font-family: "PokeFontHollow", "Open Sans", sans-serif;
+  color: yellow;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.links {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-decoration: none;
+  width: 332px;
+}
+
+.links a {
+  color: yellow;
+  -webkit-text-stroke: 0.5px black;
+  text-decoration: none;
+}
