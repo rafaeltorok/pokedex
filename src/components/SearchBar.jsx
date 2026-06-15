@@ -1,16 +1,21 @@
-import React from 'react'
+// Dependencies
+import React from "react";
 
+// Styles
+import "../styles/searchBar.css";
+
+// Component
 export default function SearchBar({ searchTerm, setSearchTerm }) {
-  return(
+  return (
     <div className="search-container">
       <input
         id="search-field"
         name="search-field"
-        type='search'
+        type="search"
         placeholder="Search Pokémon..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value.trimStart())}
       />
     </div>
-  )
+  );
 }
