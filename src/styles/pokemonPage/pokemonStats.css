@@ -1,0 +1,21 @@
+.pokemon-stats {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  flex: 1;
+  padding-top: 15px;
+  text-transform: capitalize;
+}
+
+.pokemon-stats table {
+  width: 100%;
+}
+
+.pokemon-stats-name {
+  font-weight: 300;
+  padding: 4px 8px 0 8px;
+  text-align: right;
+  width: 60%;
+}
+
+.pokemon-stats-value {
+  padding: 4px 8px 0 8px;
+}

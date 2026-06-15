@@ -33,9 +33,12 @@ Project part of the CI/CD module for the Full Stack Open course by MOOC Finland.
 
 ### Screenshots
 
+<img src="./img/main-page.png" alt="Pokédex Catalog main page" width="500"/>
+
 <div style="display: flex;">
-  <img src="./img/main-page.png" alt="Pokédex Catalog main page" width="450"/>
-  <img src="./img/poke-info-page.png" alt="Pokémon info page" width="300"/>
+  <img src="./img/poke-info-page-1.png" alt="Pokémon info page" width="200"/>
+  <img src="./img/poke-info-page-2.png" alt="Pokémon info page" width="200"/>
+  <img src="./img/poke-info-page-3.png" alt="Pokémon info page" width="200"/>
 </div>
 
 

@@ -4,10 +4,10 @@ import { Routes, Route, useMatch } from "react-router-dom";
 import { useApi } from "./useApi";
 
 // Components
-import GenSelector from "./components/genSelector";
+import GenSelector from "./components/GenSelector";
 import LoadingSpinner from "./components/LoadingSpinner";
 import ErrorMessage from "./components/ErrorMessage";
-import PokemonPage from "./components/PokemonPage";
+import PokemonPage from "./components/PokemonPage/PokemonPage";
 import PokemonList from "./components/PokemonList";
 import SearchBar from "./components/SearchBar";
 

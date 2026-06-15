@@ -1,0 +1,41 @@
+@import url("../fonts.css");
+
+.pokemon-types-container {
+  display: flex;
+  justify-content: center;
+}
+
+.pokemon-types-container .pokemon-type {
+  width: 50%;
+  text-align: center;
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  background: linear-gradient(140deg, var(--pokemon-type-color) 50%, #ddd 100%);
+  border-radius: 0.5rem;
+  text-shadow: 
+    -0.75px -0.75px 0 #202020,
+     0.75px -0.75px 0 #202020,
+    -0.75px  0.75px 0 #202020,
+     0.75px  0.75px 0 #202020;
+}
+
+.pokemon-id-field {
+  text-align: left;  
+}
+
+.pokemon-name {
+  font-size: 1.7rem;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.pokemon-info {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: yellow;
+  -webkit-text-stroke: 0.25px black;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  padding: 1rem;
+}

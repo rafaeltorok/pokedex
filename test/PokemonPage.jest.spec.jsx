@@ -2,8 +2,7 @@ import React, { act } from "react";
 import { render, screen } from "@testing-library/react";
 import axiosMock from "axios";
 import "@testing-library/jest-dom";
-import PokemonPage from "../src/components/PokemonPage";
-
+import PokemonPage from "../src/components/PokemonPage/PokemonPage";
 import { MemoryRouter } from "react-router-dom";
 
 jest.mock("axios");
