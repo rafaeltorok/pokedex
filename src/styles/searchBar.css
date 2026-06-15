@@ -1,0 +1,25 @@
+@import url("./fonts.css");
+
+.search-container {
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+}
+
+.search-container input {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  width: 300px;
+  padding: 0.5rem;
+  font-size: large;
+  background-color: black;
+  color: yellow;
+}
+
+.not-found-message {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  color: yellow;
+  -webkit-text-stroke: 0.75px black;
+  font-size: 2rem;
+  margin: 3rem;
+  text-align: center;
+}

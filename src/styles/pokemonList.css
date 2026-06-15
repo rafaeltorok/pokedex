@@ -1,0 +1,32 @@
+@import url("./fonts.css");
+
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list-item {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #252525;
+  margin: 10px;
+  height: 150px;
+  width: 150px;
+  position: relative;
+  border-radius: 1rem;
+}
+
+.list-item-name {
+  position: absolute;
+  color: yellow;
+  -webkit-text-stroke: 0.75px black;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  background-color: black;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
