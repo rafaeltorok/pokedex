@@ -41,7 +41,10 @@
     ],
     "testPathIgnorePatterns": [
       "e2e"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "<rootDir>/test/styleMock.js"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
