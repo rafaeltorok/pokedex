@@ -1,7 +1,7 @@
 {
-  "name": "pokedex-app",
+  "name": "pokedex-catalog",
   "version": "1.0.0",
-  "description": "Pokédex App",
+  "description": "Pokédex Catalog",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development --port 8080",

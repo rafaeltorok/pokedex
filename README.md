@@ -1,4 +1,4 @@
-# Pokédex
+# Pokédex Catalog
 
 ## Table of Contents
 - [About](#about)
@@ -14,7 +14,7 @@
 
 Project part of the CI/CD module for the Full Stack Open course by MOOC Finland.
 
-- [Live test⇗](https://kantopokedex.onrender.com) available on Render.
+- [Live test⇗](https://pokedex-catalog.onrender.com) available on Render.
 
 - Docker image available on Hub
   ```bash
@@ -23,23 +23,18 @@ Project part of the CI/CD module for the Full Stack Open course by MOOC Finland.
 
 ### Features
 
-- The app displays a list of all Pokémons from the first four generations (Kanto, Johto, Hoenn and Sinnoh).
+- Display a list of all Pokémons from the first four generations (Kanto, Johto, Hoenn and Sinnoh).
 
-- Search by any Pokémon on the list.
+- Search by any Pokémon based on their names.
 
-- Use the generation selector to choose which of these generations you want to display the list for.
+- Choose which generation you want to display the list for.
 
-- The individual information page displays all base stats, plus the main ability and hidden ability for each Pokémon.
+- See information for all of the base stats, plus the main ability and hidden ability for each Pokémon.
 
 ### Screenshots
 
-<div
-  style="
-    display: flex;
-    gap: 2rem;
-  "
->
-  <img src="./img/main-page.png" alt="Pokédex app main page" width="450"/>
+<div style="display: flex;">
+  <img src="./img/main-page.png" alt="Pokédex Catalog main page" width="450"/>
   <img src="./img/poke-info-page.png" alt="Pokémon info page" width="300"/>
 </div>
 
@@ -112,12 +107,12 @@ npm run eslint
 
 1. Build the image
     ```bash
-    docker build -t kanto-pokedex .
+    docker build -t pokedex-catalog .
     ```
 
 2. Run the container
     ```bash
-    docker run --name kanto-pokedex -p 5001:5001 kanto-pokedex
+    docker run --name pokedex-catalog -p 5001:5001 pokedex-catalog
     ```
 
 - Access the Web UI on http://localhost:5001
