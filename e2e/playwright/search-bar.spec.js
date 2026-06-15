@@ -2,7 +2,7 @@
 import { test, describe, expect, beforeEach } from "@playwright/test";
 
 // Tests
-describe("The search bar component", () => {
+describe("Search bar", () => {
   beforeEach(async ({ page }) => {
     await page.goto("/");
   });
