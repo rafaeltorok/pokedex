@@ -20,3 +20,24 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.pokemon-info-card-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.pokemon-info-card-wrapper a {
+  color: yellow;
+  text-decoration: none;
+}
+
+.pokemon-info-card-previous-button,
+.pokemon-info-card-next-button {
+  width: 30px;
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+  padding: 0;
+}

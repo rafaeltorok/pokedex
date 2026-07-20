@@ -53,12 +53,9 @@ footer {
 
 .links {
   font-family: "PokeFontSolid", "Open Sans", sans-serif;
-  display: flex;
-  justify-content: space-between;
   margin: 0 auto;
-  margin-bottom: 10px;
-  text-decoration: none;
-  width: 332px;
+  text-align: center;
+  font-size: 1.35rem;
 }
 
 .links a {

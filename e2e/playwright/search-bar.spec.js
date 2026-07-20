@@ -97,11 +97,9 @@ describe("Search bar", () => {
       await expect(page.getByText(/charmander/i)).toBeVisible();
 
       // Assert the previous button is not rendered
-      await expect(
-        page.getByRole("link", { name: /previous/i }),
-      ).not.toBeVisible();
-      await expect(page.getByRole("link", { name: /home/i })).toBeVisible();
-      await expect(page.getByRole("link", { name: /next/i })).toBeVisible();
+      await expect(page.getByRole("link", { name: "◀" })).not.toBeVisible();
+      await expect(page.getByRole("link", { name: /go back/i })).toBeVisible();
+      await expect(page.getByRole("link", { name: "▶" })).toBeVisible();
     });
 
     test("the next button should not be displayed on the last item of the filtered list", async ({
@@ -120,9 +118,9 @@ describe("Search bar", () => {
       await expect(page.getByText(/charizard/i)).toBeVisible();
 
       // Assert the previous button is not rendered
-      await expect(page.getByRole("link", { name: /previous/i })).toBeVisible();
-      await expect(page.getByRole("link", { name: /home/i })).toBeVisible();
-      await expect(page.getByRole("link", { name: /next/i })).not.toBeVisible();
+      await expect(page.getByRole("link", { name: "◀" })).toBeVisible();
+      await expect(page.getByRole("link", { name: /go back/i })).toBeVisible();
+      await expect(page.getByRole("link", { name: "▶" })).not.toBeVisible();
     });
   });
 });

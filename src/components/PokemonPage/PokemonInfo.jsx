@@ -20,12 +20,8 @@ export default function PokemonInfo({ pokemon }) {
 
   return (
     <div className="pokemon-info">
-      <div className="pokemon-id-field">
-        #{pokemon.id}
-      </div>
-      <div className="pokemon-name">
-        {pokemon.name}
-      </div>
+      <div className="pokemon-id-field">#{pokemon.id}</div>
+      <div className="pokemon-name">{pokemon.name}</div>
       <div className="pokemon-types-container">
         {pokemon.types.map((type) => (
           <div
