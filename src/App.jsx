@@ -30,7 +30,11 @@ const App = () => {
 
   const match = useMatch("/pokemon/:name");
   const [pokeRegion, setPokeRegion] = useState("Kanto");
-  const { data: pokemonList, error, isLoading } = useApi(pokeDataUrl, mapResults);
+  const {
+    data: pokemonList,
+    error,
+    isLoading,
+  } = useApi(pokeDataUrl, mapResults);
   const [searchTerm, setSearchTerm] = useState("");
 
   // Define which Pokémon data should be displayed based on the generation

@@ -16,10 +16,7 @@ export default function GenSelector({ pokeRegion, setPokeRegion }) {
           aria-label="generation selector"
         >
           {pokedexGenList.map((gen) => (
-            <option
-              key={gen.region}
-              value={gen.region}
-            >
+            <option key={gen.region} value={gen.region}>
               {gen.displayName}
             </option>
           ))}

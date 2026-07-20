@@ -11,15 +11,15 @@
   font-family: "PokeFontSolid", "Open Sans", sans-serif;
   background: linear-gradient(140deg, var(--pokemon-type-color) 50%, #ddd 100%);
   border-radius: 0.5rem;
-  text-shadow: 
+  text-shadow:
     -0.75px -0.75px 0 #202020,
-     0.75px -0.75px 0 #202020,
-    -0.75px  0.75px 0 #202020,
-     0.75px  0.75px 0 #202020;
+    0.75px -0.75px 0 #202020,
+    -0.75px 0.75px 0 #202020,
+    0.75px 0.75px 0 #202020;
 }
 
 .pokemon-id-field {
-  text-align: left;  
+  text-align: left;
 }
 
 .pokemon-name {

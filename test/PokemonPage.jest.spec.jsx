@@ -100,7 +100,7 @@ describe("<PokemonPage />", () => {
     expect(screen.getByTestId("stats")).toHaveTextContent("hp55attack55");
   });
 
-  it("should render previous and next urls if they exist", async () => {
+  it("should render the previous and next buttons if more Pokémons are available", async () => {
     axiosMock.get.mockResolvedValueOnce({ data: pokemonList });
 
     await act(async () => {
@@ -111,17 +111,11 @@ describe("<PokemonPage />", () => {
       );
     });
 
-    expect(screen.getByText("Previous")).toHaveAttribute(
-      "href",
-      "/pokemon/ditto",
-    );
-    expect(screen.getByText("Next")).toHaveAttribute(
-      "href",
-      "/pokemon/vaporeon",
-    );
+    expect(screen.getByText("◀")).toHaveAttribute("href", "/pokemon/ditto");
+    expect(screen.getByText("▶")).toHaveAttribute("href", "/pokemon/vaporeon");
   });
 
-  it("should not render previous and next urls if none exist", async () => {
+  it("should not render previous and next buttons if no other Pokémons are available", async () => {
     axiosMock.get.mockResolvedValueOnce({ data: pokemonList });
 
     await act(async () => {
@@ -132,7 +126,7 @@ describe("<PokemonPage />", () => {
       );
     });
 
-    expect(screen.queryByText("Previous")).toBeNull();
-    expect(screen.queryByText("Next")).toBeNull();
+    expect(screen.queryByText("◀")).toBeNull();
+    expect(screen.queryByText("▶")).toBeNull();
   });
 });

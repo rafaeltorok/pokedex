@@ -7,13 +7,15 @@ describe("Generation selector", () => {
     await page.goto("/");
   });
 
-  test("should display Kanto Pokémon by default", async({ page }) => {
-    const genSelector = page.getByRole("combobox", { name: /generation selector/i });
+  test("should display Kanto Pokémon by default", async ({ page }) => {
+    const genSelector = page.getByRole("combobox", {
+      name: /generation selector/i,
+    });
 
     // Assert the selector is displaying the correct generation and location
-    await expect(
-      genSelector.locator("option:checked")
-    ).toHaveText("Gen I - Kanto");
+    await expect(genSelector.locator("option:checked")).toHaveText(
+      "Gen I - Kanto",
+    );
 
     // Assert the starters from the respective generation are present
     await expect(page.getByRole("link", { name: /bulbasaur/i })).toBeVisible();
@@ -21,66 +23,96 @@ describe("Generation selector", () => {
     await expect(page.getByRole("link", { name: /squirtle/i })).toBeVisible();
   });
 
-  test("Pokémon from other generations should not be displayed", async({ page }) => {
-    const genSelector = page.getByRole("combobox", { name: /generation selector/i });
+  test("Pokémon from other generations should not be displayed", async ({
+    page,
+  }) => {
+    const genSelector = page.getByRole("combobox", {
+      name: /generation selector/i,
+    });
 
     // Assert the selector is displaying the correct generation and location
-    await expect(
-      genSelector.locator("option:checked")
-    ).toHaveText("Gen I - Kanto");
+    await expect(genSelector.locator("option:checked")).toHaveText(
+      "Gen I - Kanto",
+    );
 
     // Assert the starters from other generations are not present
-    await expect(page.getByRole("link", { name: /chikorita/i })).not.toBeVisible();
-    await expect(page.getByRole("link", { name: /cyndaquil/i })).not.toBeVisible();
-    await expect(page.getByRole("link", { name: /totodile/i })).not.toBeVisible();
+    await expect(
+      page.getByRole("link", { name: /chikorita/i }),
+    ).not.toBeVisible();
+    await expect(
+      page.getByRole("link", { name: /cyndaquil/i }),
+    ).not.toBeVisible();
+    await expect(
+      page.getByRole("link", { name: /totodile/i }),
+    ).not.toBeVisible();
 
-    await expect(page.getByRole("link", { name: /treecko/i })).not.toBeVisible();
-    await expect(page.getByRole("link", { name: /torchic/i })).not.toBeVisible();
+    await expect(
+      page.getByRole("link", { name: /treecko/i }),
+    ).not.toBeVisible();
+    await expect(
+      page.getByRole("link", { name: /torchic/i }),
+    ).not.toBeVisible();
     await expect(page.getByRole("link", { name: /mudkip/i })).not.toBeVisible();
   });
 
-  test("selecting Johto should display the Generation II Pokémon", async ({ page }) => {
-    const genSelector = page.getByRole("combobox", { name: /generation selector/i });
+  test("selecting Johto should display the Generation II Pokémon", async ({
+    page,
+  }) => {
+    const genSelector = page.getByRole("combobox", {
+      name: /generation selector/i,
+    });
 
     // Select the correct region from the select menu
     await genSelector.selectOption("Gen II - Johto");
-  
+
     // Assert the starters are being correctly displayed
     await expect(page.getByRole("link", { name: /chikorita/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /cyndaquil/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /totodile/i })).toBeVisible();
   });
 
-  test("selecting Hoenn should display the Generation III Pokémon", async ({ page }) => {
-    const genSelector = page.getByRole("combobox", { name: /generation selector/i });
+  test("selecting Hoenn should display the Generation III Pokémon", async ({
+    page,
+  }) => {
+    const genSelector = page.getByRole("combobox", {
+      name: /generation selector/i,
+    });
 
     // Select the correct region from the select menu
     await genSelector.selectOption("Gen III - Hoenn");
-  
+
     // Assert the starters are being correctly displayed
     await expect(page.getByRole("link", { name: /treecko/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /torchic/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /mudkip/i })).toBeVisible();
   });
 
-  test("selecting Sinnoh should display the Generation IV Pokémon", async ({ page }) => {
-    const genSelector = page.getByRole("combobox", { name: /generation selector/i });
+  test("selecting Sinnoh should display the Generation IV Pokémon", async ({
+    page,
+  }) => {
+    const genSelector = page.getByRole("combobox", {
+      name: /generation selector/i,
+    });
 
     // Select the correct region from the select menu
     await genSelector.selectOption("Gen IV - Sinnoh");
-  
+
     // Assert the starters are being correctly displayed
     await expect(page.getByRole("link", { name: /turtwig/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /chimchar/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /piplup/i })).toBeVisible();
   });
 
-  test("choosing a generation and then selecting another should correctly update the list", async ({ page }) => {
-    const genSelector = page.getByRole("combobox", { name: /generation selector/i });
+  test("choosing a generation and then selecting another should correctly update the list", async ({
+    page,
+  }) => {
+    const genSelector = page.getByRole("combobox", {
+      name: /generation selector/i,
+    });
 
     // Select another generation apart from the default one
     await genSelector.selectOption("Gen III - Hoenn");
-  
+
     // Assert the starters are being correctly displayed
     await expect(page.getByRole("link", { name: /treecko/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /torchic/i })).toBeVisible();
