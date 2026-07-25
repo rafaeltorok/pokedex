@@ -98,7 +98,7 @@ describe("Search bar", () => {
 
       // Assert the previous button is not rendered
       await expect(page.getByRole("link", { name: "◀" })).not.toBeVisible();
-      await expect(page.getByRole("link", { name: /go back/i })).toBeVisible();
+      await expect(page.getByRole("link", { name: /return/i })).toBeVisible();
       await expect(page.getByRole("link", { name: "▶" })).toBeVisible();
     });
 
@@ -119,7 +119,7 @@ describe("Search bar", () => {
 
       // Assert the previous button is not rendered
       await expect(page.getByRole("link", { name: "◀" })).toBeVisible();
-      await expect(page.getByRole("link", { name: /go back/i })).toBeVisible();
+      await expect(page.getByRole("link", { name: /return/i })).toBeVisible();
       await expect(page.getByRole("link", { name: "▶" })).not.toBeVisible();
     });
   });

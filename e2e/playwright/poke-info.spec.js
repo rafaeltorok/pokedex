@@ -16,7 +16,7 @@ describe("Pokémon info page", () => {
 
       // Assert the correct page has been displayed
       await expect(page.getByText(/bulbasaur/i)).toBeVisible();
-      await expect(page.getByRole("link", { name: /go back/i })).toBeVisible();
+      await expect(page.getByRole("link", { name: /return/i })).toBeVisible();
       await expect(page.getByRole("link", { name: "▶" })).toBeVisible();
 
       // Confirm the previous button is not present
@@ -32,21 +32,21 @@ describe("Pokémon info page", () => {
       // Assert the correct page has been displayed
       await expect(page.getByText(/^mew$/i)).toBeVisible();
       await expect(page.getByRole("link", { name: "◀" })).toBeVisible();
-      await expect(page.getByRole("link", { name: /go back/i })).toBeVisible();
+      await expect(page.getByRole("link", { name: /return/i })).toBeVisible();
 
       // Confirm the next button is not present
       await expect(page.getByRole("link", { name: "▶" })).not.toBeVisible();
     });
 
-    test("the home button sends back to the main page", async ({ page }) => {
+    test("the return button sends back to the main page", async ({ page }) => {
       // Select a pokémon
       await page.goto("/pokemon/mewtwo");
 
       // Confirm the pokémon info page has opened
       await expect(page.getByText(/mewtwo/i)).toBeVisible();
 
-      // Select the home button
-      await page.getByRole("link", { name: /go back/i }).click();
+      // Select the return button
+      await page.getByRole("link", { name: /return/i }).click();
 
       // Assert it has returned to the main page
       await expect(page.getByRole("link", { name: /venusaur/i })).toBeVisible();
