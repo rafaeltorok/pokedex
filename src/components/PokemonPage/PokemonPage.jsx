@@ -59,7 +59,7 @@ const PokemonPage = ({ previous, next }) => {
       if (eventData.dir === "Left" && next) {
         navigate(`/pokemon/${next.name}`);
       }
-    }
+    },
   });
 
   if (isLoading) {
@@ -73,10 +73,7 @@ const PokemonPage = ({ previous, next }) => {
 
   return (
     <>
-      <div className="links">
-        <Link to="/">Go back</Link>
-      </div>
-      <div className="pokemon-info-card-wrapper" { ...swipeHandler }>
+      <div className="pokemon-info-card-wrapper" {...swipeHandler}>
         <div className="pokemon-info-card-previous-button">
           {previous && <Link to={`/pokemon/${previous.name}`}>◀</Link>}
         </div>
@@ -92,6 +89,10 @@ const PokemonPage = ({ previous, next }) => {
         <div className="pokemon-info-card-next-button">
           {next && <Link to={`/pokemon/${next.name}`}>▶</Link>}
         </div>
+      </div>
+
+      <div className="links">
+        <Link to="/">Return</Link>
       </div>
     </>
   );
