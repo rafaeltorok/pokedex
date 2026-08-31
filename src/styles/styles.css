@@ -16,6 +16,7 @@ body {
   flex-direction: column;
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
+  line-height: 1.25;
   align-items: center;
   background-color: #151515;
 }
