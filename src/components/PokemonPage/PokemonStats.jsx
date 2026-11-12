@@ -1,11 +1,9 @@
-// Dependencies
 import React from "react";
-
-// Styles
 import "../../styles/pokemonPage/pokemonStats.css";
 
-// Component
-export default function PokemonStats({ pokemon, formatName }) {
+export default function PokemonStats({ pokemon }) {
+  const formatName = (nameWithDash) => nameWithDash.replace("-", " ");
+
   // Map each stat name to its respective value
   const stats = pokemon.stats
     .map((stat) => ({

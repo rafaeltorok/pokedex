@@ -1,4 +1,3 @@
-// Dependencies
 import React from "react";
 
 // Components
@@ -8,7 +7,6 @@ import PokemonStats from "./PokemonStats";
 // Styles
 import "../../styles/pokemonPage/pokemonInfo.css";
 
-// Component
 export default function PokemonInfo({ pokemon }) {
   const formatName = (nameWithDash) => nameWithDash.replace("-", " ");
 
@@ -26,7 +24,10 @@ export default function PokemonInfo({ pokemon }) {
         {pokemon.types.map((type) => (
           <div
             key={type.type.name}
-            className={`pokemon-type-${type.type.name} pokemon-type`}
+            className={"pokemon-type"}
+            style={{
+              background: `linear-gradient(140deg, var(--type-${type.type.name}) 50%, #ddd 100%)`,
+            }}
           >
             {type.type.name}
           </div>
@@ -35,18 +36,11 @@ export default function PokemonInfo({ pokemon }) {
 
       <PokemonStats pokemon={pokemon} formatName={formatName} />
 
-      <div className="pokemon-abilities">
-        {normalAbility && (
-          <PokemonAbility
-            abilityName={formatName(normalAbility.ability.name)}
-          />
-        )}
-        {hiddenAbility && (
-          <PokemonAbility
-            abilityName={formatName(hiddenAbility.ability.name)}
-          />
-        )}
-      </div>
+      <PokemonAbility
+        normalAbility={normalAbility}
+        hiddenAbility={hiddenAbility}
+        formatName={formatName}
+      />
     </div>
   );
 }

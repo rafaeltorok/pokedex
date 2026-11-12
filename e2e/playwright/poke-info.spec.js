@@ -3,7 +3,7 @@ import { test, describe, expect } from "@playwright/test";
 
 // Helper functions
 import assertStatsRowValue from "./helpers/assertStatsRowValue";
-import assertHiddenAbilities from "./helpers/assertHiddenAbilities";
+import assertAbilities from "./helpers/assertAbilities";
 
 // Tests
 describe("Pokémon info page", () => {
@@ -84,7 +84,7 @@ describe("Pokémon info page", () => {
       await expect(page.getByText(/mewtwo/i)).toBeVisible();
 
       // Assert the hidden abilities are correct
-      await assertHiddenAbilities(page, ["pressure", "unnerve"]);
+      await assertAbilities(page, "Pressure", "Unnerve");
     });
 
     test("a single ability should be correctly displayed", async ({ page }) => {
@@ -95,7 +95,7 @@ describe("Pokémon info page", () => {
       await expect(page.getByText(/^mew$/i)).toBeVisible();
 
       // Assert the hidden ability is correct
-      await assertHiddenAbilities(page, ["synchronize"]);
+      await assertAbilities(page, "Synchronize");
     });
 
     test("the id number should be present", async ({ page }) => {

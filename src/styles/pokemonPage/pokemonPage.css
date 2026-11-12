@@ -1,19 +1,35 @@
 @import url("../fonts.css");
 
 .pokemon-page {
+  min-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 640px) {
+    max-width: 350px;
+  }
+
+  @media screen and (min-width: 640px) {
+    width: 450px;
+  }
+}
+
+.pokemon-table {
   font-family: "PokeFontSolid", "Open Sans", sans-serif;
-  background: linear-gradient(140deg, var(--pokemon-type-color) 0%, #ddd 100%);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   padding: 16px;
-  min-width: 300px;
-  max-width: 350px;
+  width: 100%;
   margin: 1rem auto;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .pokemon-image {
-  min-height: 150px;
+  min-height: 200px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   background-position: center;
@@ -24,6 +40,8 @@
 .pokemon-info-card-wrapper {
   display: flex;
   align-items: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .pokemon-info-card-wrapper a {
@@ -33,15 +51,38 @@
 
 .pokemon-info-card-previous-button,
 .pokemon-info-card-next-button {
-  width: 30px;
+  width: 20px;
   flex-shrink: 0;
 
   display: flex;
   justify-content: center;
   font-size: 2.5rem;
-  padding: 0;
 }
 
-.links {
-  padding-bottom: 2rem;
+.return-button {
+  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  color: yellow;
+  -webkit-text-stroke: 0.5px black;
+  text-decoration: none;
+  font-size: 1.5rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(150, 2, 2, 0.75) 60%,
+    rgba(255, 255, 255, 0.75)
+  );
+  border-radius: 1rem;
+  width: 300px;
+  padding: 1rem 0;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.return-button:hover,
+.return-button:active {
+  color: rgb(241, 241, 71);
+  background: linear-gradient(
+    to bottom right,
+    rgb(255, 2, 2) 60%,
+    rgb(255, 255, 255)
+  );
 }
