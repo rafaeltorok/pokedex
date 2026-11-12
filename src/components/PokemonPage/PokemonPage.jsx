@@ -77,10 +77,7 @@ export default function PokemonPage({ previous, next }) {
           {previous && <Link to={`/pokemon/${previous.name}`}>◀</Link>}
         </div>
 
-        <div
-          className="pokemon-table"
-          style={{ background: gradient }}
-        >
+        <div className="pokemon-table" style={{ background: gradient }}>
           <div
             className="pokemon-image"
             style={{ backgroundImage: `url(${pokemon.sprites.front_default})` }}
@@ -93,7 +90,9 @@ export default function PokemonPage({ previous, next }) {
         </div>
       </div>
 
-      <Link to="/" className="return-button">Return</Link>
+      <Link to="/" className="return-button">
+        Return
+      </Link>
     </div>
   );
-};
+}

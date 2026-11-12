@@ -8,4 +8,4 @@ export default function LoadingSpinner() {
       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
     />
   );
-};
+}

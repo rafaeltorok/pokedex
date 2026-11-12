@@ -25,7 +25,9 @@ export default function PokemonInfo({ pokemon }) {
           <div
             key={type.type.name}
             className={"pokemon-type"}
-            style={{ background: `linear-gradient(140deg, var(--type-${type.type.name}) 50%, #ddd 100%)` }}
+            style={{
+              background: `linear-gradient(140deg, var(--type-${type.type.name}) 50%, #ddd 100%)`,
+            }}
           >
             {type.type.name}
           </div>

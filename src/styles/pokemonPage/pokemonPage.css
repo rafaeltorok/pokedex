@@ -65,7 +65,11 @@
   -webkit-text-stroke: 0.5px black;
   text-decoration: none;
   font-size: 1.5rem;
-  background: linear-gradient(to bottom right, rgba(150, 2, 2, 0.75) 60%, rgba(255, 255, 255, 0.75));
+  background: linear-gradient(
+    to bottom right,
+    rgba(150, 2, 2, 0.75) 60%,
+    rgba(255, 255, 255, 0.75)
+  );
   border-radius: 1rem;
   width: 300px;
   padding: 1rem 0;
@@ -76,5 +80,9 @@
 .return-button:hover,
 .return-button:active {
   color: rgb(241, 241, 71);
-  background: linear-gradient(to bottom right, rgb(255, 2, 2) 60%, rgb(255, 255, 255));
+  background: linear-gradient(
+    to bottom right,
+    rgb(255, 2, 2) 60%,
+    rgb(255, 255, 255)
+  );
 }
