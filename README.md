@@ -35,7 +35,9 @@ Project part of the CI/CD module for the Full Stack Open course by MOOC Finland.
 
 <img src="./img/main-page.png" alt="Pokédex Catalog main page" width="500"/>
 
-<div style="display: flex;">
+<br />
+
+<div style="display: flex; gap: 1rem;">
   <img src="./img/poke-info-page-1.png" alt="Pokémon info page" width="200"/>
   <img src="./img/poke-info-page-2.png" alt="Pokémon info page" width="200"/>
   <img src="./img/poke-info-page-3.png" alt="Pokémon info page" width="200"/>
@@ -44,26 +46,31 @@ Project part of the CI/CD module for the Full Stack Open course by MOOC Finland.
 
 ## Starting the app
 
+- Install dependencies
+  ```bash
+  npm install
+  ```
+
 ### Dev mode
 
-Run the webpack dev server
-```bash
-npm install && npm run start
-```
+- Run the webpack dev server
+  ```bash
+  npm run start
+  ```
 
 - Access the Web UI on http://localhost:8080
 
 ### Production mode
 
-Build the project
-```bash
-npm install && npm run build
-```
+- Build the project
+  ```bash
+  npm run build
+  ```
 
-Start the production build
-```bash
-npm run start-prod
-```
+- Start the production build
+  ```bash
+  npm run start-prod
+  ```
 
 - Access the Web UI on http://localhost:5001
 
