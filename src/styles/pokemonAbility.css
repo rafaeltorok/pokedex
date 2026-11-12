@@ -2,6 +2,7 @@
   display: flex;
   margin-top: 20px;
   text-transform: capitalize;
+  gap: 0.15rem;
 }
 
 .pokemon-ability {
