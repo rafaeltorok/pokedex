@@ -1,4 +1,3 @@
-// Dependencies
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router";
@@ -10,12 +9,10 @@ import LoadingSpinner from "../LoadingSpinner";
 import ErrorMessage from "../ErrorMessage";
 import PokemonInfo from "./PokemonInfo";
 
-// Styles
+// CSS styles
 import "../../styles//pokemonPage/pokemonPage.css";
-import "../../styles/pokemonTypes.css";
 
-// Component
-const PokemonPage = ({ previous, next }) => {
+export default function PokemonPage({ previous, next }) {
   const { name } = useParams();
   const {
     data: pokemon,
@@ -69,16 +66,21 @@ const PokemonPage = ({ previous, next }) => {
     return <ErrorMessage error={error} />;
   }
 
-  const { type } = pokemon.types.find((type) => type.slot === 1);
+  const gradient = pokemon.types[1]
+    ? `linear-gradient(to bottom right, var(--type-${pokemon.types[0].type.name}) 40%, var(--type-${pokemon.types[1].type.name}) 60%)`
+    : `linear-gradient(to bottom right, var(--type-${pokemon.types[0].type.name}) 50%, white 100%)`;
 
   return (
-    <>
+    <div className="pokemon-page">
       <div className="pokemon-info-card-wrapper" {...swipeHandler}>
         <div className="pokemon-info-card-previous-button">
           {previous && <Link to={`/pokemon/${previous.name}`}>◀</Link>}
         </div>
 
-        <div className={`pokemon-page pokemon-type-${type.name}`}>
+        <div
+          className="pokemon-table"
+          style={{ background: gradient }}
+        >
           <div
             className="pokemon-image"
             style={{ backgroundImage: `url(${pokemon.sprites.front_default})` }}
@@ -91,11 +93,7 @@ const PokemonPage = ({ previous, next }) => {
         </div>
       </div>
 
-      <div className="links">
-        <Link to="/">Return</Link>
-      </div>
-    </>
+      <Link to="/" className="return-button">Return</Link>
+    </div>
   );
 };
-
-export default PokemonPage;

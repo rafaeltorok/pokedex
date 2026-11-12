@@ -7,9 +7,9 @@
 
 .pokemon-types-container .pokemon-type {
   width: 50%;
+  padding: 0.5rem 0;
   text-align: center;
   font-family: "PokeFontSolid", "Open Sans", sans-serif;
-  background: linear-gradient(140deg, var(--pokemon-type-color) 50%, #ddd 100%);
   border-radius: 0.5rem;
   text-shadow:
     -0.75px -0.75px 0 #202020,
