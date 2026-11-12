@@ -1,12 +1,8 @@
-// Dependencies
 import React from "react";
 import { Link } from "react-router-dom";
-
-// Styles
 import "../styles/pokemonList.css";
 
-// Component
-const PokemonList = ({ pokemonList }) => {
+export default function PokemonList({ pokemonList }) {
   return (
     <div className="list-container">
       {pokemonList.map(({ id, name }) => (
@@ -24,5 +20,3 @@ const PokemonList = ({ pokemonList }) => {
     </div>
   );
 };
-
-export default PokemonList;
