@@ -2,12 +2,12 @@
 
 .gen-selector-area {
   display: flex;
-  margin: 1rem;
+  margin: 0.25rem;
   justify-content: center;
 }
 
 .gen-selector-area select {
-  background-color: black;
+  background-color: #084670;
   color: yellow;
   font-family: "PokeFontSolid", "Open Sans", sans-serif;
   font-size: large;

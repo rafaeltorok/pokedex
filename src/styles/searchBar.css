@@ -2,7 +2,7 @@
 
 .search-container {
   display: flex;
-  margin: 1rem;
+  margin: 0.5rem;
   justify-content: center;
 }
 
@@ -11,7 +11,7 @@
   width: 300px;
   padding: 0.5rem;
   font-size: large;
-  background-color: black;
+  background-color: #053657;
   color: yellow;
 }
 
