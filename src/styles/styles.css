@@ -1,12 +1,8 @@
 @import url("./fonts.css");
 
 :root {
-  background-image: url("../img/background.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100%;
+  color: white;
+  background: #a9ddf5;
 
   --type-bug: #ac2;
   --type-dark: #754;
@@ -35,20 +31,94 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 18px;
   line-height: 1.25;
-  align-items: center;
   min-width: 300px;
+  width: 100%;
+  min-height: 100vh; /* Prevents layout shifting during the loading spinner */
+  
+  background: repeating-linear-gradient(
+    to bottom,
+    #c4edff 0px,
+    #c4edff 60px,
+    #a9ddf5 60px,
+    #a9ddf5 150px
+  );
+  background-attachment: fixed;
+
+  @media (min-width: 700px) {
+    max-width: 950px;
+    margin-inline: auto;
+
+    background: repeating-linear-gradient(
+      to bottom,
+      #c4edff 0px,
+      #c4edff 60px,
+      #a9ddf5 60px,
+      #a9ddf5 125px
+    );
+    background-attachment: fixed;
+  }
 }
 
 body > div {
   flex: 1 0 auto;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, #3E789E, #222222);
+  position: sticky;
+  top: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+  z-index: 1000;
+  margin-bottom: 1rem
+}
+
+header h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-bottom: 0.25rem;
+  margin-top: 0;
+  font-family: "PokeFontHollow", "Open Sans", sans-serif;
+  color: yellow;
+  font-size: 3rem;
+  text-align: center;
+  padding: 0.5rem 0;
+
+  @media (min-width: 640px) {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 auto;
+
+  @media (min-width: 700px) {
+    max-width: 950px;
+    margin-inline: auto;
+  }
+}
+
 footer {
-  color: #888;
   font-size: 12px;
   flex-shrink: 0;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .loading-spinner {
@@ -63,15 +133,4 @@ footer {
   to {
     transform: rotate(359deg);
   }
-}
-
-#main-page-title {
-  font-family: "PokeFontHollow", "Open Sans", sans-serif;
-  color: yellow;
-  font-size: 3rem;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1rem 0;
-  margin-top: 0;
-  width: 100%;
 }
