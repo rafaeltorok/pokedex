@@ -10,12 +10,16 @@
   font-family: "PokeFontSolid", "Open Sans", sans-serif;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #202020;
+  background-color: rgba(17, 119, 187, 0.5);
   margin: 10px;
   height: 150px;
   width: 150px;
   position: relative;
   border-radius: 1rem;
+}
+
+.list-item:hover {
+  background-color: #0a5e96;
 }
 
 .list-item-name {

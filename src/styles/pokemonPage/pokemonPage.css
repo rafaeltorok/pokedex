@@ -45,7 +45,7 @@
 }
 
 .pokemon-info-card-wrapper a {
-  color: yellow;
+  color: rgb(62, 120, 158);
   text-decoration: none;
 }
 
@@ -67,11 +67,12 @@
   font-size: 1.5rem;
   background: linear-gradient(
     to bottom right,
-    rgba(150, 2, 2, 0.75) 60%,
-    rgba(255, 255, 255, 0.75)
+    rgba(62, 120, 158, 0.75) 50%,
+    rgba(25, 25, 25, 0.75)
   );
   border-radius: 1rem;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   padding: 1rem 0;
   text-align: center;
   margin-bottom: 1rem;
@@ -82,7 +83,7 @@
   color: rgb(241, 241, 71);
   background: linear-gradient(
     to bottom right,
-    rgb(255, 2, 2) 60%,
-    rgb(255, 255, 255)
+    rgba(58, 162, 231, 0.75) 30%,
+    rgba(8, 70, 112, 0.75)
   );
 }

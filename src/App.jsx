@@ -24,14 +24,14 @@ const mapResults = ({ results }) =>
     id: parseInt(url.match(/\/(\d+)\//)[1]),
   }));
 
-const App = () => {
+export default function App() {
   // Set the url to fetch the Pokédex generation data
   const [pokeDataUrl, setPokeDataUrl] = useState(pokedexGenList[0].dataUrl);
 
   const match = useMatch("/pokemon/:name");
   const [pokeRegion, setPokeRegion] = useState("Kanto");
   const {
-    data: pokemonList,
+    data: pokemonList = [],
     error,
     isLoading,
   } = useApi(pokeDataUrl, mapResults);
@@ -42,13 +42,6 @@ const App = () => {
     const gen = pokedexGenList.find((gen) => gen.region === pokeRegion);
     setPokeDataUrl(gen.dataUrl);
   }, [pokeRegion]);
-
-  if (isLoading) {
-    return <LoadingSpinner />;
-  }
-  if (error) {
-    return <ErrorMessage error={error} />;
-  }
 
   // Filter the list based on the search term
   const filteredPokemon = pokemonList.filter((pokemon) => {
@@ -71,45 +64,68 @@ const App = () => {
   }
 
   return (
-    <>
-      <h1 id="main-page-title">{pokeRegion} Pokédex</h1>
+    <Routes>
+      <Route
+        exact
+        path="/"
+        element={
+          <>
+            <header>
+              <h1 id="main-page-title">{pokeRegion} Pokédex</h1>
 
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <>
-              <GenSelector
-                pokeRegion={pokeRegion}
-                setPokeRegion={setPokeRegion}
-              />
-              <SearchBar
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
-              />
-              {filteredPokemon.length === 0 ? (
+              {!isLoading && !error && (
+                <>
+                  <GenSelector
+                    pokeRegion={pokeRegion}
+                    setPokeRegion={setPokeRegion}
+                  />
+                  <SearchBar
+                    searchTerm={searchTerm}
+                    setSearchTerm={setSearchTerm}
+                  />
+                </>
+              )}
+            </header>
+
+            <main>
+              {isLoading ? (
+                <LoadingSpinner />
+              ) : error ? (
+                <ErrorMessage error={error} />
+              ) : filteredPokemon.length === 0 ? (
                 <p className="not-found-message">No Pokémon found</p>
               ) : (
                 <PokemonList pokemonList={filteredPokemon} />
               )}
-            </>
-          }
-        />
-        <Route
-          exact
-          path="/pokemon/:name"
-          element={
-            <PokemonPage
-              pokemonList={filteredPokemon}
-              previous={previous}
-              next={next}
-            />
-          }
-        />
-      </Routes>
-    </>
+            </main>
+          </>
+        }
+      />
+      <Route
+        exact
+        path="/pokemon/:name"
+        element={
+          <>
+            <header>
+              <h1 id="main-page-title">{pokeRegion} Pokédex</h1>
+            </header>
+
+            <main>
+              {isLoading ? (
+                <LoadingSpinner />
+              ) : error ? (
+                <ErrorMessage error={error} />
+              ) : (
+                <PokemonPage
+                  pokemonList={filteredPokemon}
+                  previous={previous}
+                  next={next}
+                />
+              )}
+            </main>
+          </>
+        }
+      />
+    </Routes>
   );
 };
-
-export default App;

@@ -23,7 +23,7 @@ Project part of the CI/CD module for the Full Stack Open course by MOOC Finland.
 
 ### Features
 
-- Display a list of all Pokémons from the first four generations (Kanto, Johto, Hoenn and Sinnoh).
+- Each list contains the Pokémon from the first four generations (Kanto, Johto, Hoenn and Sinnoh).
 
 - Search by any Pokémon based on their names.
 
@@ -38,9 +38,9 @@ Project part of the CI/CD module for the Full Stack Open course by MOOC Finland.
 <br />
 
 <div style="display: flex; gap: 1rem;">
-  <img src="./img/poke-info-page-1.png" alt="Pokémon info page" width="200"/>
-  <img src="./img/poke-info-page-2.png" alt="Pokémon info page" width="200"/>
-  <img src="./img/poke-info-page-3.png" alt="Pokémon info page" width="200"/>
+  <img src="./img/poke-info-page-1.png" alt="Pokémon info page" height="400"/>
+  <img src="./img/poke-info-page-2.png" alt="Pokémon info page" height="400"/>
+  <img src="./img/poke-info-page-3.png" alt="Pokémon info page" height="400"/>
 </div>
 
 
