@@ -7,6 +7,10 @@ import PokemonStats from "./PokemonStats";
 // Styles
 import "../../styles/pokemonPage/pokemonInfo.css";
 
+function capitalize(type) {
+  return String(type).charAt(0).toUpperCase() + String(type).slice(1);
+}
+
 export default function PokemonInfo({ pokemon }) {
   const formatName = (nameWithDash) => nameWithDash.replace("-", " ");
 
@@ -29,7 +33,7 @@ export default function PokemonInfo({ pokemon }) {
               background: `linear-gradient(140deg, var(--type-${type.type.name}) 50%, #ddd 100%)`,
             }}
           >
-            {type.type.name}
+            {capitalize(type.type.name)}
           </div>
         ))}
       </div>
