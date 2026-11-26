@@ -112,6 +112,7 @@ main {
 }
 
 footer {
+  font-family: "Tiny5duo", "Open Sans", sans-serif;
   font-size: 12px;
   flex-shrink: 0;
   background-color: rgba(0, 0, 0, 0.5);

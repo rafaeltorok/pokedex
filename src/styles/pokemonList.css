@@ -7,7 +7,7 @@
 }
 
 .list-item {
-  font-family: "PokeFontSolid", "Open Sans", sans-serif;
+  font-family: "Tiny5duo", "Open Sans", sans-serif;
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(17, 119, 187, 0.5);
@@ -25,7 +25,6 @@
 .list-item-name {
   position: absolute;
   color: yellow;
-  -webkit-text-stroke: 0.75px black;
   bottom: 0;
   width: 100%;
   text-align: center;
